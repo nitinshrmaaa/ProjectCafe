@@ -32,37 +32,23 @@ function HeroSlider() {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0">
+
       {images.map((image, index) => (
         <img
           key={index}
           src={image}
-          alt={`Hero ${index + 1}`}
-          className={`absolute inset-0 h-full w-full object-cover transition-all duration-[5000] ease-linear ${
+          alt=""
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
             index === current
-              ? "opacity-100 scale-110 brightness-90"
+              ? "opacity-100 scale-105"
               : "opacity-0 scale-100"
           }`}
         />
       ))}
 
-      {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-black/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70"></div>
 
-      {/* Navigation Dots */}
-      <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 gap-3">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrent(index)}
-            className={`transition-all duration-300 ${
-              current === index
-                ? "h-3 w-8 rounded-full bg-amber-400"
-                : "h-3 w-3 rounded-full bg-white/50 hover:bg-white"
-            }`}
-          />
-        ))}
-      </div>
     </div>
   );
 }

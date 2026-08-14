@@ -1,0 +1,29 @@
+{
+  "name": "brew-haven",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "oxlint src",
+    "optimize:images": "node scripts/optimize-images.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
+    "axios": "^1.18.1",
+    "framer-motion": "^12.42.2",
+    "next": "^16.3.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-icons": "^5.7.0",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "oxlint": "^1.71.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.3.2"
+  }
+}

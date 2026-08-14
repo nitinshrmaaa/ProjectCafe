@@ -67,7 +67,15 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
+    <html
+      lang="en"
+      // globals.css sets `scroll-behavior: smooth` for in-page anchors. Since
+      // Next 16 the router only suspends that during a route transition when
+      // this attribute is present — without it, "Home" from a scrolled /menu
+      // tries to *animate* back to the top and lands wherever it gets to.
+      data-scroll-behavior="smooth"
+      className={`${playfair.variable} ${poppins.variable}`}
+    >
       <body className="flex min-h-screen flex-col">
         <Navbar />
 

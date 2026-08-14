@@ -11,8 +11,8 @@ import Logo from "./Logo";
 import SocialLinks from "./SocialLinks";
 import NewsletterForm from "./NewsletterForm";
 import Container from "../ui/Container";
+import useOpeningStatus from "../../hooks/useOpeningStatus";
 import { CONTACT, HOURS, NAV_LINKS, SITE } from "../../utils/constants";
-import { isOpenNow } from "../../utils/helpers";
 
 const EXPLORE = [
   ...NAV_LINKS,
@@ -30,7 +30,7 @@ const OFFERINGS = [
 ];
 
 function Footer() {
-  const open = isOpenNow();
+  const status = useOpeningStatus();
 
   return (
     <footer className="noise relative overflow-hidden border-t border-white/10 bg-espresso-950">
@@ -131,14 +131,16 @@ function Footer() {
               </li>
             </ul>
 
-            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[3px] text-white/60">
-              <span
-                className={`h-2 w-2 rounded-full ${
-                  open ? "bg-emerald-400" : "bg-red-400"
-                }`}
-              />
-              {open ? "Open now" : "Closed now"}
-            </p>
+            {status && (
+              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[3px] text-white/60">
+                <span
+                  className={`h-2 w-2 rounded-full ${
+                    status.open ? "bg-emerald-400" : "bg-red-400"
+                  }`}
+                />
+                {status.open ? "Open now" : "Closed now"}
+              </p>
+            )}
           </div>
         </div>
 

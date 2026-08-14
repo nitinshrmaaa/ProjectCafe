@@ -6,6 +6,7 @@ import GalleryGrid from "./GalleryGrid";
 import Lightbox from "./Lightbox";
 import { GALLERY_CATEGORIES, galleryImages } from "./galleryData";
 import Container from "../ui/Container";
+import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
@@ -44,10 +45,7 @@ function Gallery({ compact = false, withHeading = true }) {
   }, [compact, category]);
 
   return (
-    <section
-      id="gallery"
-      className="relative bg-espresso-950 py-20 lg:py-28"
-    >
+    <Section id="gallery" tone="deep" glow="right">
       <Container>
         {withHeading && (
           <SectionHeading
@@ -149,7 +147,7 @@ function Gallery({ compact = false, withHeading = true }) {
         onClose={() => setLightboxIndex(null)}
         onNavigate={setLightboxIndex}
       />
-    </section>
+    </Section>
   );
 }
 

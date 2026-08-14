@@ -50,7 +50,13 @@ export const STATS = [
   { value: "4.9", suffix: "★", label: "Guest Rating" },
   { value: "2500", suffix: "+", label: "Happy Guests" },
   { value: "15", suffix: "+", label: "Coffee Blends" },
-  { value: "12", suffix: "yrs", label: "Of Roasting" },
+  // Derived, not typed: the About badge already counts from SITE.founded, and
+  // a hardcoded 12 here meant the same page claimed two different ages.
+  {
+    value: String(new Date().getFullYear() - SITE.founded),
+    suffix: "yrs",
+    label: "Of Roasting",
+  },
 ];
 
 export const VALUES = [

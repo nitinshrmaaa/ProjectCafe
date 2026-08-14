@@ -4,47 +4,38 @@ import Link from "next/link";
 import { SITE } from "../../utils/constants";
 import { cn } from "../../utils/helpers";
 
+/**
+ * Letter-spacing pads the right of the final glyph too, so each word carries a
+ * matching negative margin-end. Without it the gap either side of the diamond
+ * is lopsided and the lockup hangs past its own right edge.
+ */
 const SIZES = {
-  sm: { mark: "h-9 w-9", word: "text-xl", sub: "text-[8px] tracking-[4px]" },
-  md: { mark: "h-11 w-11", word: "text-[26px]", sub: "text-[9px] tracking-[4.5px]" },
-  lg: { mark: "h-14 w-14", word: "text-4xl", sub: "text-[10px] tracking-[6px]" },
+  sm: {
+    word: "text-[15px]",
+    track: "tracking-[0.26em] -me-[0.26em]",
+    gap: "gap-2",
+    diamond: "h-[3px] w-[3px]",
+    sub: "mt-2.5 text-[8px] tracking-[3.5px]",
+  },
+  md: {
+    word: "text-[19px]",
+    track: "tracking-[0.28em] -me-[0.28em]",
+    gap: "gap-2.5",
+    diamond: "h-1 w-1",
+    sub: "mt-3 text-[9px] tracking-[4px]",
+  },
+  lg: {
+    word: "text-[27px] sm:text-[31px]",
+    track: "tracking-[0.3em] -me-[0.3em]",
+    gap: "gap-4",
+    diamond: "h-1.5 w-1.5",
+    sub: "mt-4 text-[10px] tracking-[5px]",
+  },
 };
-
-/** Hand-drawn coffee bean inside a hairline ring — the house mark. */
-function BeanMark({ className }) {
-  return (
-    <span
-      className={cn(
-        "relative flex shrink-0 items-center justify-center rounded-full",
-        className
-      )}
-    >
-      {/* Ring */}
-      <span className="absolute inset-0 rounded-full border border-gold-400/35" />
-
-      {/* Soft inner glow so the mark reads on photography */}
-      <span className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-400/15 to-transparent" />
-
-      <svg
-        viewBox="0 0 40 40"
-        aria-hidden="true"
-        className="relative h-[58%] w-[58%] text-gold-400"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      >
-        <g transform="rotate(-32 20 20)">
-          <ellipse cx="20" cy="20" rx="10" ry="15" />
-          <path d="M20 5.5c-4.4 4.8-4.4 9.7 0 14.5s4.4 9.7 0 14.5" />
-        </g>
-      </svg>
-    </span>
-  );
-}
 
 /**
  * Brand lockup used in the header, drawer, footer and auth screens.
+ * A pure wordmark — serif caps split by a gold diamond, no icon.
  * Renders as a link to the home page unless `as="span"`.
  */
 function Logo({ size = "md", withTagline = true, onClick, className, as }) {
@@ -56,39 +47,40 @@ function Logo({ size = "md", withTagline = true, onClick, className, as }) {
     <Wrapper
       {...wrapperProps}
       aria-label={`${SITE.name} — home`}
-      className={cn("group flex items-center gap-3.5", className)}
+      className={cn("group inline-flex flex-col items-start", className)}
     >
-      <BeanMark
+      <span
         className={cn(
-          scale.mark,
-          "transition-transform duration-500 group-hover:rotate-12"
+          "flex items-center font-serif font-medium uppercase leading-none text-white transition-colors duration-500 group-hover:text-gold-100",
+          scale.word,
+          scale.gap
         )}
-      />
+      >
+        <span className={scale.track}>Brew</span>
 
-      <span className="flex flex-col justify-center leading-none">
+        <span
+          aria-hidden="true"
+          className={cn(
+            "shrink-0 rotate-45 bg-gold-400 transition-colors duration-500 group-hover:bg-gold-200",
+            scale.diamond
+          )}
+        />
+
+        <span className={scale.track}>Haven</span>
+      </span>
+
+      {withTagline && (
         <span
           className={cn(
-            "font-serif font-semibold leading-none tracking-tight text-white",
-            scale.word
+            "flex items-center gap-2 uppercase text-white/40",
+            scale.sub
           )}
         >
-          Brew{" "}
-          <span className="italic font-normal text-gold-400">Haven</span>
+          {SITE.tagline}
+          <span className="h-px w-4 bg-gold-400/40" />
+          Est. {SITE.founded}
         </span>
-
-        {withTagline && (
-          <span
-            className={cn(
-              "mt-2 flex items-center gap-2 uppercase text-white/40",
-              scale.sub
-            )}
-          >
-            {SITE.tagline}
-            <span className="h-px w-4 bg-gold-400/40" />
-            Est. {SITE.founded}
-          </span>
-        )}
-      </span>
+      )}
     </Wrapper>
   );
 }

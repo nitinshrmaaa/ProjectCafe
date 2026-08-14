@@ -3,6 +3,7 @@
 import ContactInfo from "./ContactInfo";
 import ContactForm from "./ContactForm";
 import Container from "../ui/Container";
+import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
 import Button from "../ui/Button";
@@ -16,7 +17,7 @@ import { cn } from "../../utils/helpers";
  */
 function Contact({ compact = false, withHeading = true }) {
   return (
-    <section id="contact" className="bg-espresso-900 py-20 lg:py-28">
+    <Section id="contact" tone="deep" glow="top" divider>
       <Container>
         {withHeading && (
           <SectionHeading
@@ -68,7 +69,7 @@ function Contact({ compact = false, withHeading = true }) {
           )}
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
 

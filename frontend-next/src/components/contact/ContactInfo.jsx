@@ -7,9 +7,9 @@ import {
   FaPhoneAlt,
   FaRegClock,
 } from "react-icons/fa";
+import useOpeningStatus from "../../hooks/useOpeningStatus";
 import { CONTACT, HOURS } from "../../utils/constants";
 import { fadeUp, stagger, viewportOnce } from "../../utils/animations";
-import { isOpenNow } from "../../utils/helpers";
 
 const CARDS = [
   {
@@ -32,7 +32,7 @@ const CARDS = [
 ];
 
 function ContactInfo() {
-  const open = isOpenNow();
+  const status = useOpeningStatus();
 
   return (
     <motion.div
@@ -96,14 +96,16 @@ function ContactInfo() {
             </span>
           </span>
 
-          <span className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-[10px] uppercase tracking-[2px] text-white/60">
-            <span
-              className={`h-1.5 w-1.5 rounded-full ${
-                open ? "bg-emerald-400" : "bg-red-400"
-              }`}
-            />
-            {open ? "Open" : "Closed"}
-          </span>
+          {status && (
+            <span className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-[10px] uppercase tracking-[2px] text-white/60">
+              <span
+                className={`h-1.5 w-1.5 rounded-full ${
+                  status.open ? "bg-emerald-400" : "bg-red-400"
+                }`}
+              />
+              {status.open ? "Open" : "Closed"}
+            </span>
+          )}
         </div>
 
         <dl className="mt-6 space-y-3 text-sm">

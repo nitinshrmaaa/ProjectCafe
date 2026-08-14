@@ -14,7 +14,7 @@ import { EASE } from "../../utils/animations";
  */
 function PageHeader({ name, eyebrow, title, highlight, description, image }) {
   return (
-    <header className="relative overflow-hidden pb-16 pt-36 sm:pb-20 sm:pt-44">
+    <header className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32">
       {image && (
         <>
           <Image

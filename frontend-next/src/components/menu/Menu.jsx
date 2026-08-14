@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import MenuGrid from "./MenuGrid";
 import { featuredItems } from "./menuData";
 import Container from "../ui/Container";
+import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
@@ -14,10 +15,7 @@ import Reveal from "../ui/Reveal";
  */
 function Menu() {
   return (
-    <section
-      id="menu"
-      className="relative bg-gradient-to-b from-espresso-900 via-espresso-950 to-espresso-900 py-20 lg:py-28"
-    >
+    <Section id="menu" tone="raised" space="tall" glow="top" divider>
       <Container>
         <SectionHeading
           eyebrow="Our Menu"
@@ -37,7 +35,7 @@ function Menu() {
           </Button>
         </Reveal>
       </Container>
-    </section>
+    </Section>
   );
 }
 

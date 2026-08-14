@@ -94,7 +94,7 @@ function MenuHero() {
         Est. 2012 · San Francisco
       </span>
 
-      <Container className="relative z-10 flex flex-1 items-center pb-14 pt-36 sm:pt-40 lg:pt-44">
+      <Container className="relative z-10 flex flex-1 items-center pb-14 pt-28 sm:pt-32 lg:pt-32">
         <motion.div
           variants={stagger(0.11, 0.1)}
           initial="hidden"

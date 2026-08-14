@@ -50,6 +50,17 @@ export const stagger = (staggerChildren = 0.12, delayChildren = 0) => ({
 /** Sensible default for `whileInView` sections. */
 export const viewportOnce = { once: true, amount: 0.2 };
 
+/**
+ * Replays every time the element enters the viewport rather than only on the
+ * first pass. For sections that should present themselves on each visit —
+ * scroll away and back and they open again, the way they did on load.
+ *
+ * `amount` is higher than the once-only default: at 0.2 a tall section
+ * re-triggers while most of it is still on screen, which reads as a flicker
+ * instead of an entrance.
+ */
+export const viewportRepeat = { once: false, amount: 0.35 };
+
 export const hoverLift = {
   rest: { y: 0 },
   hover: { y: -8, transition: { duration: 0.3, ease: EASE } },

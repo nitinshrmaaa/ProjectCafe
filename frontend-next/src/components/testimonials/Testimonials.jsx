@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
 import Container from "../ui/Container";
+import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import Rating from "../ui/Rating";
 import { TESTIMONIALS } from "../../utils/constants";
@@ -36,16 +37,13 @@ function Testimonials() {
   const testimonial = TESTIMONIALS[index];
 
   return (
-    <section
-      className="relative overflow-hidden bg-espresso-900 py-20 lg:py-28"
+    <Section
+      space="tall"
+      glow="right"
+      divider
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div
-        className="pointer-events-none absolute right-0 top-10 h-80 w-80 rounded-full bg-gold-500/10 blur-[140px]"
-        aria-hidden="true"
-      />
-
       <Container className="relative">
         <SectionHeading
           eyebrow="Kind Words"
@@ -128,7 +126,7 @@ function Testimonials() {
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
 

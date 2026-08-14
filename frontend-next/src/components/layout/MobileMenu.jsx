@@ -9,13 +9,17 @@ import Logo from "./Logo";
 import Button from "../ui/Button";
 import SocialLinks from "./SocialLinks";
 import useLockBodyScroll from "../../hooks/useLockBodyScroll";
+import useOpeningStatus from "../../hooks/useOpeningStatus";
 import { CONTACT, NAV_LINKS } from "../../utils/constants";
-import { cn, isOpenNow, todayHours } from "../../utils/helpers";
+import { cn } from "../../utils/helpers";
 import { EASE } from "../../utils/animations";
 
 /** Slide-in navigation drawer for small screens. */
 function MobileMenu({ open, onClose }) {
   const pathname = usePathname();
+
+  // `open` above is the drawer; this one is the café.
+  const status = useOpeningStatus();
 
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -110,16 +114,18 @@ function MobileMenu({ open, onClose }) {
                 <p className="flex items-center gap-3">
                   <FaRegClock className="text-gold-400" />
 
-                  <span className="flex items-center gap-2">
-                    <span
-                      className={cn(
-                        "h-1.5 w-1.5 rounded-full",
-                        isOpenNow() ? "bg-emerald-400" : "bg-red-400"
-                      )}
-                    />
-                    {isOpenNow() ? "Open today" : "Closed now"} ·{" "}
-                    {todayHours().label}
-                  </span>
+                  {status && (
+                    <span className="flex items-center gap-2">
+                      <span
+                        className={cn(
+                          "h-1.5 w-1.5 rounded-full",
+                          status.open ? "bg-emerald-400" : "bg-red-400"
+                        )}
+                      />
+                      {status.open ? "Open today" : "Closed now"} ·{" "}
+                      {status.hours.label}
+                    </span>
+                  )}
                 </p>
 
                 <a

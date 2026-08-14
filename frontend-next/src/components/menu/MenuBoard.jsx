@@ -79,7 +79,7 @@ function MenuBoard() {
   return (
     <section id="board" className="relative bg-espresso-900 pb-24 lg:pb-32">
       {/* Controls stay in reach while the board scrolls */}
-      <div className="sticky top-[72px] z-30 border-b border-white/[0.07] bg-espresso-950/92 backdrop-blur-xl">
+      <div className="sticky top-[68px] z-30 border-b border-white/[0.07] bg-espresso-950/92 backdrop-blur-xl">
         <Container className="flex flex-col gap-1 py-1.5 sm:gap-6 lg:flex-row lg:items-center lg:justify-between">
           <CategoryTabs
             categories={CATEGORIES}

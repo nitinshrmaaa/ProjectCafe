@@ -44,7 +44,16 @@ function About({ compact = false }) {
       // screen of its own rather than ending partway down and asking for
       // another scroll. The About page keeps the normal rhythm — it has the
       // process and the team stacked below it.
-      className={compact ? "lg:flex lg:min-h-screen lg:items-center" : undefined}
+      // The foot is pulled in from the section's normal py-20/py-28 on the home
+      // page only: the menu screen below closes in by the same amount, and
+      // between them the two were leaving a bare band of espresso a fifth of a
+      // screen deep at the join. Longhand beats the shorthand in the cascade,
+      // so this wins over the rhythm Section sets.
+      className={
+        compact
+          ? "pb-10 lg:flex lg:min-h-screen lg:items-center lg:pb-12"
+          : undefined
+      }
     >
       {/* Only a wash — the photograph behind it is the hero's, spanned across
           both screens by page.jsx, so this section frames the lower half of the

@@ -126,6 +126,37 @@ body[data-scroll-locked="true"] {
     color: transparent;
   }
 
+  /*
+   * `gold-text` with the light moving across it. The gradient is twice the
+   * width of the text and carries a pale band through its middle, so sweeping
+   * the background from one side to the other draws that band over the letters
+   * like light travelling along gilt — slowly, seven seconds end to end, since
+   * the point is that you notice it on the second look rather than the first.
+   *
+   * The drop-shadow reads the clipped glyphs rather than the box, so the glow
+   * follows the letterforms and lifts them off a near-black section.
+   *
+   * Reduced motion is handled globally: the sweep collapses to a single
+   * instant pass and the type simply sits in gold.
+   */
+  .gold-text-shine {
+    background: linear-gradient(
+      100deg,
+      var(--color-gold-400) 0%,
+      var(--color-gold-300) 25%,
+      var(--color-gold-100) 45%,
+      var(--color-gold-200) 55%,
+      var(--color-gold-400) 75%,
+      var(--color-gold-500) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 30px rgb(212 167 98 / 0.22));
+    animation: shimmer 7s linear infinite;
+  }
+
   /* Thin gold hairline used under section eyebrows */
   .hairline {
     background: linear-gradient(

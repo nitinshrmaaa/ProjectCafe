@@ -52,7 +52,15 @@ function Menu() {
       // Head pulled in from the section's normal py-20/py-28, matching the
       // story's foot above: the two together were leaving a bare band of
       // espresso about a fifth of a screen deep at the join.
-      className="pt-10 lg:flex lg:min-h-screen lg:flex-col lg:justify-center lg:pt-12"
+      // The screen is a floor rather than a stretch, same as the story's. This
+      // screen's contents come to roughly 66rem at lg, so `min-h-screen` never
+      // applied on a laptop and only told a tall monitor to add height nothing
+      // was going to fill — `justify-center` then put half of it back above the
+      // headline, directly under the story's own leftover, and the two together
+      // were the blank band that reappeared on a big display. The cap sits at
+      // the same 68rem the story uses, so the two screens stop growing on the
+      // same line and nothing at 1080 or under changes.
+      className="pt-10 lg:flex lg:min-h-[min(100vh,68rem)] lg:flex-col lg:justify-center lg:pt-12"
     >
       <MenuBackdrop />
 

@@ -29,7 +29,7 @@ function CategoryTabs({ categories, active, onChange, counts = {} }) {
           >
             <span
               className={cn(
-                "font-serif text-[15px] tracking-wide transition-colors duration-300 sm:text-base",
+                "font-serif text-[0.9375rem] tracking-wide transition-colors duration-300 sm:text-base",
                 isActive
                   ? "text-gold-300"
                   : "text-white/55 group-hover:text-white"
@@ -41,7 +41,7 @@ function CategoryTabs({ categories, active, onChange, counts = {} }) {
             {counts[category] != null && (
               <sup
                 className={cn(
-                  "ml-1.5 font-serif text-[10px] transition-colors duration-300",
+                  "ml-1.5 font-serif text-[0.625rem] transition-colors duration-300",
                   isActive ? "text-gold-400" : "text-white/25"
                 )}
               >

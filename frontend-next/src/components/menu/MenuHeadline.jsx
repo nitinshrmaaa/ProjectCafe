@@ -81,7 +81,7 @@ function MenuHeadline({ beat = 0 }) {
       >
         <span className="hairline h-px w-12 sm:w-20" aria-hidden="true" />
 
-        <span className="text-[11px] font-semibold uppercase tracking-[6px] text-gold-400 sm:text-xs sm:tracking-[8px]">
+        <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400 sm:text-xs sm:tracking-[0.5rem]">
           Our Menu
         </span>
 
@@ -126,7 +126,7 @@ function MenuHeadline({ beat = 0 }) {
                 aria-hidden="true"
               />
 
-              <p className="mx-auto mt-4 max-w-md text-balance text-[15px] leading-7 text-white/45">
+              <p className="mx-auto mt-4 max-w-md text-balance text-[0.9375rem] leading-7 text-white/45">
                 {line.note}
               </p>
             </motion.div>

@@ -52,7 +52,7 @@ function ContactInfo() {
             </span>
 
             <span>
-              <span className="block text-[11px] uppercase tracking-[3px] text-white/40">
+              <span className="block text-[0.6875rem] uppercase tracking-[0.1875rem] text-white/40">
                 {card.label}
               </span>
 
@@ -91,13 +91,13 @@ function ContactInfo() {
               <FaRegClock />
             </span>
 
-            <span className="text-[11px] uppercase tracking-[3px] text-white/40">
+            <span className="text-[0.6875rem] uppercase tracking-[0.1875rem] text-white/40">
               Opening hours
             </span>
           </span>
 
           {status && (
-            <span className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-[10px] uppercase tracking-[2px] text-white/60">
+            <span className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-[0.625rem] uppercase tracking-[0.125rem] text-white/60">
               <span
                 className={`h-1.5 w-1.5 rounded-full ${
                   status.open ? "bg-emerald-400" : "bg-red-400"

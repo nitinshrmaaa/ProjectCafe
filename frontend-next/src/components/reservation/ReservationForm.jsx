@@ -103,7 +103,7 @@ function ReservationForm() {
             ["Time", formatTime(confirmed.time)],
           ].map(([label, value]) => (
             <div key={label} className="bg-espresso-900 px-6 py-5 text-left">
-              <dt className="text-[10px] uppercase tracking-[3px] text-white/40">
+              <dt className="text-[0.625rem] uppercase tracking-[0.1875rem] text-white/40">
                 {label}
               </dt>
 

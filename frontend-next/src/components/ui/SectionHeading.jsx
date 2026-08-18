@@ -39,7 +39,7 @@ function SectionHeading({
         >
           <span className="hairline h-px w-12 sm:w-20" />
 
-          <span className="text-[11px] font-semibold uppercase tracking-[6px] text-gold-400 sm:text-xs sm:tracking-[8px]">
+          <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400 sm:text-xs sm:tracking-[0.5rem]">
             {eyebrow}
           </span>
 

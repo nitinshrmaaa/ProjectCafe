@@ -61,7 +61,7 @@ function MenuSpotlight() {
         >
           {/* Detail */}
           <div className="order-2 lg:order-1">
-            <span className="text-[11px] font-semibold uppercase tracking-[6px] text-gold-400">
+            <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400">
               The Pour
             </span>
 
@@ -76,7 +76,7 @@ function MenuSpotlight() {
             </motion.h2>
 
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <p className="text-xs uppercase tracking-[4px] text-gold-400/80">
+              <p className="text-xs uppercase tracking-[0.25rem] text-gold-400/80">
                 {item.origin}
               </p>
 
@@ -105,7 +105,7 @@ function MenuSpotlight() {
 
             {/* Drink switcher */}
             <div className="mt-10">
-              <p className="mb-4 text-[11px] uppercase tracking-[3px] text-white/35">
+              <p className="mb-4 text-[0.6875rem] uppercase tracking-[0.1875rem] text-white/35">
                 Choose a drink
               </p>
 
@@ -142,7 +142,7 @@ function MenuSpotlight() {
 
                         <span
                           className={cn(
-                            "text-[10px] uppercase tracking-[1px] leading-tight",
+                            "text-[0.625rem] uppercase tracking-[0.0625rem] leading-tight",
                             isActive ? "text-gold-300" : "text-white/45"
                           )}
                         >
@@ -215,7 +215,7 @@ function MenuSpotlight() {
                 />
               )}
 
-              <span className="pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-black/40 px-4 py-2 text-[10px] uppercase tracking-[3px] text-white/50 backdrop-blur-md">
+              <span className="pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-black/40 px-4 py-2 text-[0.625rem] uppercase tracking-[0.1875rem] text-white/50 backdrop-blur-md">
                 {show3D ? "Drag to turn" : item.name}
               </span>
             </div>

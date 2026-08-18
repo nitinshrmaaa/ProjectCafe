@@ -8,7 +8,7 @@ function GalleryGrid({ items, onOpen }) {
   return (
     <motion.div
       layout
-      className="grid auto-rows-[220px] grid-cols-1 gap-5 sm:grid-cols-2 sm:auto-rows-[260px] lg:grid-cols-12 lg:auto-rows-[280px]"
+      className="grid auto-rows-[13.75rem] grid-cols-1 gap-5 sm:grid-cols-2 sm:auto-rows-[16.25rem] lg:grid-cols-12 lg:auto-rows-[17.5rem]"
     >
       <AnimatePresence mode="popLayout">
         {items.map((item, index) => (

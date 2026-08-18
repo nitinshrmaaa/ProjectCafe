@@ -49,6 +49,32 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* ------------------------------------------------------------------
+   Large displays: scale the unit, not the breakpoints
+
+   Every measurement on this site — type, spacing, container widths, the
+   section heights — is set in rem, so the whole composition is one number
+   multiplied out. Above 96rem the design has no more breakpoints left to say
+   anything new about layout, and until now it simply stopped: a 2560px monitor
+   was handed the laptop's typography inside the laptop's containers with the
+   extra thousand pixels given to the margins. That is why a big screen read as
+   a sparser page rather than as the same page larger.
+
+   Scaling the root unit scales all of it at once, so a wide display gets the
+   laptop's proportions rather than a ribbon of content down the middle. 16px
+   at 1536, 20px by 2560, and flat past that — a cap, because beyond a point
+   more scale is only a bigger page, not a better-filled one.
+
+   Breakpoints are untouched: rem inside a media query resolves against the
+   initial font size and never against this one, so sm/md/lg/xl/2xl stay
+   exactly where they are and no layout switches because of this rule.
+------------------------------------------------------------------- */
+@media (min-width: 96rem) {
+  html {
+    font-size: clamp(1rem, calc(1rem + (100vw - 96rem) * 0.0039), 1.25rem);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

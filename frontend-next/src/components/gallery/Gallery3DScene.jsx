@@ -83,7 +83,7 @@ function Gallery3DScene({ items }) {
         <div className="max-w-lg rounded-2xl border border-white/10 bg-espresso-950/85 px-6 py-4 text-center backdrop-blur-md">
           {active ? (
             <>
-              <p className="text-[10px] uppercase tracking-[4px] text-gold-400">
+              <p className="text-[0.625rem] uppercase tracking-[0.25rem] text-gold-400">
                 {active.category}
               </p>
 
@@ -96,7 +96,7 @@ function Gallery3DScene({ items }) {
               </p>
             </>
           ) : (
-            <p className="text-xs uppercase tracking-[4px] text-white/40">
+            <p className="text-xs uppercase tracking-[0.25rem] text-white/40">
               Drag to look around · click a photograph
             </p>
           )}

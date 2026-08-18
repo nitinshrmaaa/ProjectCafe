@@ -41,7 +41,7 @@ function MenuListRow({ item, isFavorite = false, onToggleFavorite }) {
               : `Save ${item.name} to favourites`
           }
           className={cn(
-            "absolute left-1.5 top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-espresso-950/70 text-[11px] backdrop-blur-md transition-all duration-300",
+            "absolute left-1.5 top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-espresso-950/70 text-[0.6875rem] backdrop-blur-md transition-all duration-300",
             isFavorite
               ? "text-gold-400 opacity-100"
               : "text-white/70 opacity-0 hover:text-gold-300 group-hover:opacity-100 focus-visible:opacity-100"

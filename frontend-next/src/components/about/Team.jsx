@@ -53,13 +53,13 @@ function Team() {
                 {person.name}
               </h3>
 
-              <p className="mt-2 text-[11px] uppercase tracking-[3px] text-gold-400">
+              <p className="mt-2 text-[0.6875rem] uppercase tracking-[0.1875rem] text-gold-400">
                 {person.role}
               </p>
 
               <p className="mt-5 leading-7 text-white/50">{person.bio}</p>
 
-              <p className="mt-7 border-t border-white/8 pt-5 text-xs uppercase tracking-[3px] text-white/30">
+              <p className="mt-7 border-t border-white/8 pt-5 text-xs uppercase tracking-[0.1875rem] text-white/30">
                 With us since {person.since}
               </p>
             </motion.article>

@@ -46,7 +46,7 @@ function PageHeader({ name, eyebrow, title, highlight, description, image }) {
             Home
           </Link>
 
-          <FaChevronRight className="text-[8px]" />
+          <FaChevronRight className="text-[0.5rem]" />
 
           <span className="text-gold-400">{name ?? eyebrow ?? title}</span>
         </motion.nav>
@@ -55,7 +55,7 @@ function PageHeader({ name, eyebrow, title, highlight, description, image }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className="text-[11px] font-semibold uppercase tracking-[6px] text-gold-400"
+          className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400"
         >
           {eyebrow}
         </motion.p>

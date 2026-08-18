@@ -25,7 +25,7 @@ function Loader({ label = "Brewing…" }) {
         <Spinner className="h-10 w-10 text-gold-400" />
       </div>
 
-      <p className="text-xs uppercase tracking-[8px] text-gold-300/80">
+      <p className="text-xs uppercase tracking-[0.5rem] text-gold-300/80">
         {label}
       </p>
     </div>

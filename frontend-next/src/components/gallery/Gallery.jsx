@@ -111,13 +111,13 @@ function Gallery({ compact = false, withHeading = true }) {
 
         <div className="mt-12">
           {offer3D && view === "3d" ? (
-            <div className="h-[70vh] min-h-[520px] overflow-hidden rounded-[2rem] border border-white/10">
+            <div className="h-[70vh] min-h-[32.5rem] overflow-hidden rounded-[2rem] border border-white/10">
               <CanvasBoundary
                 fallback={<GalleryGrid items={items} onOpen={setLightboxIndex} />}
               >
                 <Suspense
                   fallback={
-                    <div className="flex h-full items-center justify-center text-sm uppercase tracking-[4px] text-white/40">
+                    <div className="flex h-full items-center justify-center text-sm uppercase tracking-[0.25rem] text-white/40">
                       Building the room…
                     </div>
                   }

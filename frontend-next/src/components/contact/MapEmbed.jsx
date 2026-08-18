@@ -17,7 +17,7 @@ function MapEmbed() {
         src={`https://maps.google.com/maps?q=${query}&z=15&output=embed`}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        className="h-[420px] w-full grayscale-[0.6] contrast-125"
+        className="h-[26.25rem] w-full grayscale-[0.6] contrast-125"
       />
 
       <a

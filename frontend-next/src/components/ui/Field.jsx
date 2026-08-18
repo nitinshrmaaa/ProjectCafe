@@ -34,7 +34,7 @@ function Field({
     <div className={cn("flex flex-col gap-2", className)}>
       <label
         htmlFor={id}
-        className="text-xs font-medium uppercase tracking-[3px] text-white/50"
+        className="text-xs font-medium uppercase tracking-[0.1875rem] text-white/50"
       >
         {label}
       </label>

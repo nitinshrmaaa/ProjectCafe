@@ -28,7 +28,7 @@ function ScrollIndicator({ targetId = "story" }) {
         />
       </span>
 
-      <span className="text-[10px] uppercase tracking-[4px]">Scroll</span>
+      <span className="text-[0.625rem] uppercase tracking-[0.25rem]">Scroll</span>
     </motion.button>
   );
 }

@@ -88,7 +88,7 @@ function MenuHero() {
 
       {/* Vertical maker's mark */}
       <span
-        className="pointer-events-none absolute left-12 top-1/2 hidden -translate-y-1/2 -rotate-90 text-[10px] uppercase tracking-[6px] text-white/25 xl:block"
+        className="pointer-events-none absolute left-12 top-1/2 hidden -translate-y-1/2 -rotate-90 text-[0.625rem] uppercase tracking-[0.375rem] text-white/25 xl:block"
         aria-hidden="true"
       >
         Est. 2012 · San Francisco
@@ -112,7 +112,7 @@ function MenuHero() {
                 Home
               </Link>
 
-              <FaChevronRight className="text-[8px]" />
+              <FaChevronRight className="text-[0.5rem]" />
 
               <span className="text-gold-400">Menu</span>
             </motion.nav>
@@ -123,14 +123,14 @@ function MenuHero() {
             >
               <span className="h-px w-10 bg-gold-400/50" />
 
-              <span className="text-[11px] font-semibold uppercase tracking-[6px] text-gold-400">
+              <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400">
                 Our Menu
               </span>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="mt-7 font-serif text-5xl font-semibold leading-[1.04] text-white sm:text-6xl xl:text-[76px]"
+              className="mt-7 font-serif text-5xl font-semibold leading-[1.04] text-white sm:text-6xl xl:text-[4.75rem]"
             >
               Everything on
               <br />
@@ -188,7 +188,7 @@ function MenuHero() {
             className="relative mx-auto w-full max-w-md lg:mx-0"
           >
             <div className="relative rounded-[2rem] border border-white/12 bg-espresso-950/70 p-8 shadow-[0_40px_80px_-40px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:p-9">
-              <span className="absolute -top-3.5 left-8 rounded-full border border-gold-400/40 bg-espresso-950 px-4 py-1.5 text-[10px] uppercase tracking-[3px] text-gold-300">
+              <span className="absolute -top-3.5 left-8 rounded-full border border-gold-400/40 bg-espresso-950 px-4 py-1.5 text-[0.625rem] uppercase tracking-[0.1875rem] text-gold-300">
                 Today at the counter
               </span>
 
@@ -210,7 +210,7 @@ function MenuHero() {
                       </span>
                     </div>
 
-                    <p className="mt-1.5 text-[10px] uppercase tracking-[2.5px] text-white/35">
+                    <p className="mt-1.5 text-[0.625rem] uppercase tracking-[0.15625rem] text-white/35">
                       {item.origin}
                     </p>
                   </li>
@@ -237,7 +237,7 @@ function MenuHero() {
         aria-label="Scroll to the menu"
         className="relative z-10 mx-auto mb-10 flex flex-col items-center gap-3 text-white/40 transition-colors hover:text-gold-300"
       >
-        <span className="text-[10px] uppercase tracking-[4px]">The board</span>
+        <span className="text-[0.625rem] uppercase tracking-[0.25rem]">The board</span>
 
         <span className="flex h-9 w-5 items-start justify-center rounded-full border border-current p-1">
           <motion.span

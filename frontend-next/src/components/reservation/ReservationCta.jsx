@@ -36,7 +36,7 @@ function ReservationCta() {
           viewport={viewportOnce}
           className="mx-auto max-w-2xl"
         >
-          <span className="text-[11px] font-semibold uppercase tracking-[6px] text-gold-400">
+          <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400">
             Reservations
           </span>
 

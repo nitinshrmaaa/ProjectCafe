@@ -56,7 +56,7 @@ function Navbar() {
           <div
             className={cn(
               "mx-auto flex max-w-7xl items-center justify-between gap-8 px-5 transition-all duration-500 sm:px-8",
-              solid ? "h-[68px]" : "h-20 sm:h-[88px]"
+              solid ? "h-[4.25rem]" : "h-20 sm:h-[5.5rem]"
             )}
           >
             <div className="flex items-center gap-5 xl:gap-7">
@@ -65,7 +65,7 @@ function Navbar() {
               {/* Resolves after mount — see useOpeningStatus. The hours only
                   join it on the widest screens so the row never crowds. */}
               {status && (
-                <span className="hidden items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[10px] uppercase tracking-[2px] text-white/55 backdrop-blur-md lg:flex">
+                <span className="hidden items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[0.625rem] uppercase tracking-[0.125rem] text-white/55 backdrop-blur-md lg:flex">
                   <span
                     className={cn(
                       "h-1.5 w-1.5 rounded-full",
@@ -95,7 +95,7 @@ function Navbar() {
                         href={link.to}
                         aria-current={active ? "page" : undefined}
                         className={cn(
-                          "group relative block py-2 text-[11.5px] uppercase tracking-[2.5px] transition-colors duration-300",
+                          "group relative block py-2 text-[0.71875rem] uppercase tracking-[0.15625rem] transition-colors duration-300",
                           active
                             ? "text-gold-400"
                             : "text-white/60 hover:text-white"
@@ -133,10 +133,10 @@ function Navbar() {
                   without needing a filled button to shout it. */}
               <Link
                 href="/reserve"
-                className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap text-[11.5px] font-medium uppercase tracking-[2.5px] text-gold-400 transition-colors duration-300 hover:text-gold-200"
+                className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap text-[0.71875rem] font-medium uppercase tracking-[0.15625rem] text-gold-400 transition-colors duration-300 hover:text-gold-200"
               >
                 Reserve
-                <FaArrowRight className="text-[9px] transition-transform duration-300 group-hover:translate-x-1" />
+                <FaArrowRight className="text-[0.5625rem] transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 

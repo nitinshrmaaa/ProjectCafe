@@ -33,7 +33,7 @@ function MenuCard({ item, isFavorite = false, onToggleFavorite }) {
         <div className="absolute inset-0 bg-gradient-to-t from-espresso-900 via-espresso-900/20 to-transparent" />
 
         {item.badge && (
-          <span className="absolute left-4 top-4 rounded-full bg-gold-400 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[2px] text-espresso-950">
+          <span className="absolute left-4 top-4 rounded-full bg-gold-400 px-3.5 py-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.125rem] text-espresso-950">
             {item.badge}
           </span>
         )}
@@ -65,7 +65,7 @@ function MenuCard({ item, isFavorite = false, onToggleFavorite }) {
               {item.name}
             </h3>
 
-            <p className="mt-1.5 text-[11px] uppercase tracking-[3px] text-gold-400/80">
+            <p className="mt-1.5 text-[0.6875rem] uppercase tracking-[0.1875rem] text-gold-400/80">
               {item.origin}
             </p>
           </div>
@@ -83,7 +83,7 @@ function MenuCard({ item, isFavorite = false, onToggleFavorite }) {
           {item.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[2px] text-white/45"
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[0.6875rem] uppercase tracking-[0.125rem] text-white/45"
             >
               {tag}
             </span>

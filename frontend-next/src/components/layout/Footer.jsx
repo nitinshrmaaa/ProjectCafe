@@ -132,7 +132,7 @@ function Footer() {
             </ul>
 
             {status && (
-              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[3px] text-white/60">
+              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.1875rem] text-white/60">
                 <span
                   className={`h-2 w-2 rounded-full ${
                     status.open ? "bg-emerald-400" : "bg-red-400"

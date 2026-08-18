@@ -20,14 +20,14 @@ function HeroContent() {
         >
           <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
 
-          <span className="text-[10px] uppercase tracking-[5px] text-gold-200 sm:text-xs sm:tracking-[6px]">
+          <span className="text-[0.625rem] uppercase tracking-[0.3125rem] text-gold-200 sm:text-xs sm:tracking-[0.375rem]">
             Artisan Coffee House
           </span>
         </motion.div>
 
         <motion.h1
           variants={fadeUp}
-          className="font-serif text-[42px] font-medium leading-[1.05] text-white sm:text-6xl lg:text-[92px]"
+          className="font-serif text-[2.625rem] font-medium leading-[1.05] text-white sm:text-6xl lg:text-[5.75rem]"
         >
           Crafted Coffee
           <br />

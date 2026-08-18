@@ -106,7 +106,7 @@ function Lightbox({ items, index, onClose, onNavigate }) {
             />
 
             <figcaption className="mt-6 text-center">
-              <p className="text-[10px] uppercase tracking-[4px] text-gold-400">
+              <p className="text-[0.625rem] uppercase tracking-[0.25rem] text-gold-400">
                 {item.category}
               </p>
 
@@ -118,7 +118,7 @@ function Lightbox({ items, index, onClose, onNavigate }) {
                 {item.description}
               </p>
 
-              <p className="mt-4 text-xs tracking-[3px] text-white/30">
+              <p className="mt-4 text-xs tracking-[0.1875rem] text-white/30">
                 {index + 1} / {items.length}
               </p>
             </figcaption>

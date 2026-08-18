@@ -21,7 +21,7 @@ function NotFoundContent() {
             <FaMugHot />
           </span>
 
-          <p className="mt-10 font-serif text-[100px] leading-none text-white/10 sm:text-[160px]">
+          <p className="mt-10 font-serif text-[6.25rem] leading-none text-white/10 sm:text-[10rem]">
             404
           </p>
 

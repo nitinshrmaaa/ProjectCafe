@@ -94,7 +94,7 @@ function Menu() {
             <span className="hairline h-px w-8 flex-1 sm:max-w-[10rem]" aria-hidden="true" />
           </div>
 
-          <p className="mt-6 text-center text-[11px] uppercase tracking-[3px] text-white/30">
+          <p className="mt-6 text-center text-[0.6875rem] uppercase tracking-[0.1875rem] text-white/30">
             {menuItems.length - featuredItems.length} more on the board
           </p>
         </Reveal>

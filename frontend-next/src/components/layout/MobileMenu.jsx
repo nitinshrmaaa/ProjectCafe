@@ -102,7 +102,7 @@ function MobileMenu({ open, onClose }) {
                     >
                       {link.name}
 
-                      <span className="text-xs tracking-[4px] text-white/25">
+                      <span className="text-xs tracking-[0.25rem] text-white/25">
                         0{index + 1}
                       </span>
                     </Link>

@@ -27,7 +27,7 @@ function HeroStats() {
             <StatCounter value={stat.value} suffix={stat.suffix} />
           </p>
 
-          <p className="mt-1 whitespace-nowrap text-[10px] uppercase tracking-[3px] text-white/50">
+          <p className="mt-1 whitespace-nowrap text-[0.625rem] uppercase tracking-[0.1875rem] text-white/50">
             {stat.label}
           </p>
         </div>

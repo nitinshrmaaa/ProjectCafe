@@ -92,12 +92,12 @@ function MenuFeatureCard({ item, isFavorite = false, onToggleFavorite }) {
         </div>
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <p className="text-[10px] uppercase tracking-[3px] text-gold-400/75">
+          <p className="text-[0.625rem] uppercase tracking-[0.1875rem] text-gold-400/75">
             {item.origin}
           </p>
 
           {item.badge && (
-            <span className="rounded-full border border-gold-400/30 bg-gold-400/10 px-3 py-1 text-[9px] font-semibold uppercase tracking-[2px] text-gold-300">
+            <span className="rounded-full border border-gold-400/30 bg-gold-400/10 px-3 py-1 text-[0.5625rem] font-semibold uppercase tracking-[0.125rem] text-gold-300">
               {item.badge}
             </span>
           )}

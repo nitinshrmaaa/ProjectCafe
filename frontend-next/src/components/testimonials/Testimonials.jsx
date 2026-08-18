@@ -78,7 +78,7 @@ function Testimonials() {
                     {testimonial.name}
                   </p>
 
-                  <p className="mt-1 text-[11px] uppercase tracking-[3px] text-white/40">
+                  <p className="mt-1 text-[0.6875rem] uppercase tracking-[0.1875rem] text-white/40">
                     {testimonial.role}
                   </p>
                 </footer>

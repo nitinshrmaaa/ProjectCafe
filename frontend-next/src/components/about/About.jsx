@@ -137,7 +137,7 @@ function About({ compact = false }) {
                     />
                   </p>
 
-                  <p className="mt-1 text-[10px] uppercase tracking-[3px] text-white/50">
+                  <p className="mt-1 text-[0.625rem] uppercase tracking-[0.1875rem] text-white/50">
                     Of roasting
                   </p>
                 </div>
@@ -159,7 +159,7 @@ function About({ compact = false }) {
             <motion.div variants={fadeUp} className="mb-6 flex items-center gap-4">
               <span className="hairline h-px w-14" />
 
-              <span className="text-[11px] font-semibold uppercase tracking-[6px] text-gold-400">
+              <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400">
                 Our Story
               </span>
             </motion.div>
@@ -193,7 +193,7 @@ function About({ compact = false }) {
                 lines have air between them. */}
             <motion.p
               variants={fadeUp}
-              className="mt-8 text-[17px] leading-[1.85] text-white/75 first-letter:float-left first-letter:mr-3 first-letter:mt-1.5 first-letter:font-serif first-letter:text-[3.4rem] first-letter:leading-[0.75] first-letter:text-gold-400"
+              className="mt-8 text-[1.0625rem] leading-[1.85] text-white/75 first-letter:float-left first-letter:mr-3 first-letter:mt-1.5 first-letter:font-serif first-letter:text-[3.4rem] first-letter:leading-[0.75] first-letter:text-gold-400"
             >
               Brew Haven opened in {SITE.founded} with one second-hand roaster and
               a stubborn idea: that a neighbourhood café could buy its coffee the
@@ -203,7 +203,7 @@ function About({ compact = false }) {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 text-[15px] leading-[1.85] text-white/50"
+              className="mt-6 text-[0.9375rem] leading-[1.85] text-white/50"
             >
               All these years later we still roast in the same room we serve in. The
               beans in your cup were green fruit fewer than ten days ago, and the
@@ -239,7 +239,7 @@ function About({ compact = false }) {
                   {/* Anchors the right end of every row, so each rule reads as
                       a full-width line rather than trailing off into space.
                       Same device the mobile drawer uses on its nav links. */}
-                  <span className="shrink-0 font-sans text-[11px] tracking-[3px] text-white/25">
+                  <span className="shrink-0 font-sans text-[0.6875rem] tracking-[0.1875rem] text-white/25">
                     0{index + 1}
                   </span>
                 </li>
@@ -274,7 +274,7 @@ function About({ compact = false }) {
                   <StatCounter value={stat.value} suffix={stat.suffix} />
                 </p>
 
-                <p className="mt-2 text-[11px] uppercase tracking-[3px] text-white/45">
+                <p className="mt-2 text-[0.6875rem] uppercase tracking-[0.1875rem] text-white/45">
                   {stat.label}
                 </p>
               </div>

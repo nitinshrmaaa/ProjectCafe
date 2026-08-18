@@ -39,11 +39,11 @@ function GalleryCard({ item, onOpen, className }) {
       </span>
 
       <div className="absolute inset-x-0 bottom-0 p-6 text-left">
-        <p className="text-[10px] uppercase tracking-[4px] text-gold-400">
+        <p className="text-[0.625rem] uppercase tracking-[0.25rem] text-gold-400">
           {item.category}
         </p>
 
-        <h3 className="mt-2 font-serif text-2xl text-white sm:text-[28px]">
+        <h3 className="mt-2 font-serif text-2xl text-white sm:text-[1.75rem]">
           {item.title}
         </h3>
 

@@ -79,7 +79,7 @@ function MenuBoard() {
   return (
     <section id="board" className="relative bg-espresso-900 pb-24 lg:pb-32">
       {/* Controls stay in reach while the board scrolls */}
-      <div className="sticky top-[68px] z-30 border-b border-white/[0.07] bg-espresso-950/92 backdrop-blur-xl">
+      <div className="sticky top-[4.25rem] z-30 border-b border-white/[0.07] bg-espresso-950/92 backdrop-blur-xl">
         <Container className="flex flex-col gap-1 py-1.5 sm:gap-6 lg:flex-row lg:items-center lg:justify-between">
           <CategoryTabs
             categories={CATEGORIES}
@@ -94,7 +94,7 @@ function MenuBoard() {
               Search the menu
             </label>
 
-            <FaSearch className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 text-[11px] text-white/30 transition-colors group-focus-within:text-gold-400" />
+            <FaSearch className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 text-[0.6875rem] text-white/30 transition-colors group-focus-within:text-gold-400" />
 
             <input
               id="board-search"
@@ -110,7 +110,7 @@ function MenuBoard() {
                 type="button"
                 onClick={() => setQuery("")}
                 aria-label="Clear search"
-                className="absolute right-0 top-1/2 -translate-y-1/2 text-[11px] text-white/35 transition-colors hover:text-gold-300"
+                className="absolute right-0 top-1/2 -translate-y-1/2 text-[0.6875rem] text-white/35 transition-colors hover:text-gold-300"
               >
                 <FaTimes />
               </button>
@@ -134,7 +134,7 @@ function MenuBoard() {
                   <div className="flex items-center justify-center gap-4">
                     <span className="hairline h-px w-12" />
 
-                    <span className="text-[11px] font-semibold uppercase tracking-[6px] text-gold-400">
+                    <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400">
                       Signatures
                     </span>
 
@@ -195,7 +195,7 @@ function MenuBoard() {
                 setQuery("");
                 setCategory("All");
               }}
-              className="mt-8 text-sm uppercase tracking-[3px] text-gold-400 transition-colors hover:text-gold-300"
+              className="mt-8 text-sm uppercase tracking-[0.1875rem] text-gold-400 transition-colors hover:text-gold-300"
             >
               Show the whole menu
             </button>
@@ -215,14 +215,14 @@ function MenuBoard() {
                     <div className="flex items-center justify-center gap-5">
                       <span className="h-px w-10 bg-gradient-to-l from-gold-400/40 to-transparent sm:w-20" />
 
-                      <h2 className="font-serif text-3xl text-white sm:text-[34px]">
+                      <h2 className="font-serif text-3xl text-white sm:text-[2.125rem]">
                         {group.name}
                       </h2>
 
                       <span className="h-px w-10 bg-gradient-to-r from-gold-400/40 to-transparent sm:w-20" />
                     </div>
 
-                    <p className="mx-auto mt-3 max-w-md font-serif text-[15px] italic text-white/35">
+                    <p className="mx-auto mt-3 max-w-md font-serif text-[0.9375rem] italic text-white/35">
                       {group.blurb}
                     </p>
                   </header>
@@ -250,7 +250,7 @@ function MenuBoard() {
             </div>
 
             {/* Footnotes, the way a real menu carries them */}
-            <ul className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-white/[0.06] pt-8 text-center text-xs uppercase tracking-[2px] text-white/30">
+            <ul className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-white/[0.06] pt-8 text-center text-xs uppercase tracking-[0.125rem] text-white/30">
               {FOOTNOTES.map((note) => (
                 <li key={note}>{note}</li>
               ))}

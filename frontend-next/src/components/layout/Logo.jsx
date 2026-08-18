@@ -11,25 +11,25 @@ import { cn } from "../../utils/helpers";
  */
 const SIZES = {
   sm: {
-    word: "text-[15px]",
+    word: "text-[0.9375rem]",
     track: "tracking-[0.26em] -me-[0.26em]",
     gap: "gap-2",
-    diamond: "h-[3px] w-[3px]",
-    sub: "mt-2.5 text-[8px] tracking-[3.5px]",
+    diamond: "h-[0.1875rem] w-[0.1875rem]",
+    sub: "mt-2.5 text-[0.5rem] tracking-[0.21875rem]",
   },
   md: {
-    word: "text-[19px]",
+    word: "text-[1.1875rem]",
     track: "tracking-[0.28em] -me-[0.28em]",
     gap: "gap-2.5",
     diamond: "h-1 w-1",
-    sub: "mt-3 text-[9px] tracking-[4px]",
+    sub: "mt-3 text-[0.5625rem] tracking-[0.25rem]",
   },
   lg: {
-    word: "text-[27px] sm:text-[31px]",
+    word: "text-[1.6875rem] sm:text-[1.9375rem]",
     track: "tracking-[0.3em] -me-[0.3em]",
     gap: "gap-4",
     diamond: "h-1.5 w-1.5",
-    sub: "mt-4 text-[10px] tracking-[5px]",
+    sub: "mt-4 text-[0.625rem] tracking-[0.3125rem]",
   },
 };
 

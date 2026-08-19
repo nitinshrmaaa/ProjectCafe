@@ -14,23 +14,28 @@ import { EASE, stagger, viewportRepeat } from "../../utils/animations";
 const INTERVAL = 5000;
 
 /**
- * One card per screen on a phone, two from md, three from lg — set as flex
- * bases that subtract the gaps, so three cards and two gaps come to exactly
- * the width of the track and a page is one clean screenful rather than three
- * cards and a sliver of a fourth.
+ * One card per screen on a phone, two from md, three from lg, four from 3xl —
+ * set as flex bases that subtract the gaps, so the cards and the gaps between
+ * them come to exactly the width of the track and a page is one clean
+ * screenful rather than n cards and a sliver of another.
+ *
+ * The fourth is the whole point of the 3xl tier. Three cards across a 2560
+ * display either leave the track short or stretch each card into a billboard;
+ * a fourth uses the width the way a wider screen is supposed to be used, and
+ * turns six drinks into a page and a half instead of two sparse ones.
  */
 const SLIDE =
-  "shrink-0 grow-0 snap-start basis-full md:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)]";
+  "shrink-0 grow-0 snap-start basis-full md:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)] 3xl:basis-[calc((100%-3.75rem)/4)]";
 
 /** The cards are landscape, so a page wants depth rather than height. */
-const SLIDE_HEIGHT = "h-56 lg:h-60 2xl:h-72";
+const SLIDE_HEIGHT = "h-56 lg:h-60 2xl:h-72 3xl:h-80";
 
 /**
  * The buttons live in a gutter the track leaves for them, so they sit beside
  * the cards rather than on top of them. Half a button laid over the first and
  * last card is the detail that makes a carousel look bolted on.
  */
-const GUTTER = "relative md:px-16 lg:px-20";
+const GUTTER = "relative md:px-16 lg:px-20 3xl:px-24";
 
 const CONTROL =
   "absolute top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-espresso-950/60 text-sm text-cream/80 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-gold-400/70 hover:bg-gold-400 hover:text-espresso-950 hover:shadow-glow focus-visible:border-gold-400 active:scale-95 md:flex";

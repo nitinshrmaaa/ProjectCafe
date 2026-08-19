@@ -51,7 +51,7 @@ function Testimonials() {
           highlight="say about us"
         />
 
-        <div className="relative mx-auto mt-16 max-w-3xl">
+        <div className="relative mx-auto mt-16 max-w-3xl 3xl:mt-20 3xl:max-w-5xl">
           <FaQuoteLeft
             className="mx-auto mb-8 text-4xl text-gold-400/30"
             aria-hidden="true"

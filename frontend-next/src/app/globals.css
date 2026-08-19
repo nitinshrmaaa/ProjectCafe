@@ -5,6 +5,26 @@
    Design tokens — consumed by Tailwind utilities (bg-gold-400, etc.)
 ------------------------------------------------------------------- */
 @theme {
+  /*
+   * The design ran out of breakpoints at 96rem, which is why a large monitor
+   * got the 1920 layout with the surplus width dropped into the gutters. These
+   * two give the wide screens tiers of their own: the containers open up, the
+   * carousel carries a fourth card, and the display type takes the step it has
+   * room for. Width spent on content rather than on margins.
+   *
+   * 112rem rather than the 120rem a 1920 display suggests, because a media
+   * query measures the viewport without the scrollbar and this site paints a
+   * 10px one that takes layout width — a maximised 1920 window reports 1910,
+   * and a tier set at 1920 would have sat there never matching anything. Every
+   * laptop-class width (1366, 1536, 1600, 1680) stays below it.
+   *
+   * The second tier is for the 2560 monitors. One tier sized to fill 1920
+   * still leaves a QHD screen a third empty; 132rem puts the content back at
+   * the same share of the display it holds on a laptop.
+   */
+  --breakpoint-3xl: 112rem;
+  --breakpoint-4xl: 150rem;
+
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 
@@ -47,32 +67,6 @@ html {
   /* keeps anchored sections clear of the fixed navbar */
   scroll-padding-top: 6.5rem;
   -webkit-text-size-adjust: 100%;
-}
-
-/* ------------------------------------------------------------------
-   Large displays: scale the unit, not the breakpoints
-
-   Every measurement on this site — type, spacing, container widths, the
-   section heights — is set in rem, so the whole composition is one number
-   multiplied out. Above 96rem the design has no more breakpoints left to say
-   anything new about layout, and until now it simply stopped: a 2560px monitor
-   was handed the laptop's typography inside the laptop's containers with the
-   extra thousand pixels given to the margins. That is why a big screen read as
-   a sparser page rather than as the same page larger.
-
-   Scaling the root unit scales all of it at once, so a wide display gets the
-   laptop's proportions rather than a ribbon of content down the middle. 16px
-   at 1536, 20px by 2560, and flat past that — a cap, because beyond a point
-   more scale is only a bigger page, not a better-filled one.
-
-   Breakpoints are untouched: rem inside a media query resolves against the
-   initial font size and never against this one, so sm/md/lg/xl/2xl stay
-   exactly where they are and no layout switches because of this rule.
-------------------------------------------------------------------- */
-@media (min-width: 96rem) {
-  html {
-    font-size: clamp(1rem, calc(1rem + (100vw - 96rem) * 0.0039), 1.25rem);
-  }
 }
 
 * {

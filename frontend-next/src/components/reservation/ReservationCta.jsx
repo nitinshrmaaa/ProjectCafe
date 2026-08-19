@@ -34,7 +34,7 @@ function ReservationCta() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="mx-auto max-w-2xl"
+          className="mx-auto max-w-2xl 3xl:max-w-4xl"
         >
           <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.375rem] text-gold-400">
             Reservations
@@ -45,7 +45,7 @@ function ReservationCta() {
             <span className="gold-text italic"> window</span>
           </h2>
 
-          <p className="mx-auto mt-7 max-w-xl leading-8 text-white/60">
+          <p className="mx-auto mt-7 max-w-xl leading-8 text-white/60 3xl:max-w-2xl 3xl:text-lg 3xl:leading-9">
             Weekday mornings are usually calm. Weekend brunch books out by
             Thursday — reserve online in under a minute.
           </p>

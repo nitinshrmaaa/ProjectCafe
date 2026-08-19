@@ -85,7 +85,7 @@ function About({ compact = false }) {
           className={cn(
             "grid items-center gap-14",
             compact
-              ? "lg:grid-cols-[1.3fr_1fr] lg:gap-16"
+              ? "lg:grid-cols-[1.3fr_1fr] lg:gap-16 3xl:grid-cols-[1.55fr_1fr] 3xl:gap-24"
               : "lg:grid-cols-2 lg:gap-20"
           )}
         >
@@ -171,7 +171,7 @@ function About({ compact = false }) {
                 the italic gold line does the emphasis on its own. */}
             <motion.h2
               variants={fadeUp}
-              className="font-serif text-4xl font-normal leading-[1.05] tracking-[-0.015em] text-white sm:text-5xl"
+              className="font-serif text-4xl font-normal leading-[1.05] tracking-[-0.015em] text-white sm:text-5xl 3xl:text-6xl"
             >
               A small roastery that
               {/* A block span rather than a <br>, so the second line can be
@@ -183,7 +183,7 @@ function About({ compact = false }) {
                   the screen; the gap left to fill is therefore 50vw - 38rem,
                   floored at the 2rem padding for viewports under 1280px where
                   the container hasn't started centring yet. */}
-              <span className="gold-text -me-5 block text-right italic sm:me-[calc(-1_*_max(2rem,50vw_-_38rem))]">
+              <span className="gold-text -me-5 block text-right italic sm:me-[calc(-1_*_max(2rem,50vw_-_38rem))] 3xl:me-[calc(-1_*_max(3rem,50vw_-_52rem))] 4xl:me-[calc(-1_*_max(3rem,50vw_-_63rem))]">
                 never got any bigger
               </span>
             </motion.h2>
@@ -193,7 +193,7 @@ function About({ compact = false }) {
                 lines have air between them. */}
             <motion.p
               variants={fadeUp}
-              className="mt-8 text-[1.0625rem] leading-[1.85] text-white/75 first-letter:float-left first-letter:mr-3 first-letter:mt-1.5 first-letter:font-serif first-letter:text-[3.4rem] first-letter:leading-[0.75] first-letter:text-gold-400"
+              className="mt-8 text-[1.0625rem] leading-[1.85] text-white/75 3xl:text-[1.1875rem] first-letter:float-left first-letter:mr-3 first-letter:mt-1.5 first-letter:font-serif first-letter:text-[3.4rem] first-letter:leading-[0.75] first-letter:text-gold-400"
             >
               Brew Haven opened in {SITE.founded} with one second-hand roaster and
               a stubborn idea: that a neighbourhood café could buy its coffee the
@@ -220,7 +220,7 @@ function About({ compact = false }) {
               // 01–04 run past the copy column and finish at the viewport's
               // right edge, so each one is a full-length line across the page
               // instead of stopping where the column does.
-              className="mt-10 -me-5 divide-y divide-white/[0.08] border-t border-white/[0.08] sm:me-[calc(-1_*_max(2rem,50vw_-_38rem))]"
+              className="mt-10 -me-5 divide-y divide-white/[0.08] border-t border-white/[0.08] sm:me-[calc(-1_*_max(2rem,50vw_-_38rem))] 3xl:me-[calc(-1_*_max(3rem,50vw_-_52rem))] 4xl:me-[calc(-1_*_max(3rem,50vw_-_63rem))]"
             >
               {PROMISES.map((promise, index) => (
                 <li

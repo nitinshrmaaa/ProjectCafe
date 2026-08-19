@@ -90,7 +90,7 @@ function MenuHeadline({ beat = 0 }) {
 
       <motion.h2
         variants={fadeUp}
-        className="mt-6 font-serif text-[2.75rem] font-normal leading-[1.02] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl"
+        className="mt-6 font-serif text-[2.75rem] font-normal leading-[1.02] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl 3xl:text-8xl 4xl:text-9xl"
       >
         Six Things We
         <span className="gold-text-shine block italic">Pour Most Often</span>
@@ -101,7 +101,7 @@ function MenuHeadline({ beat = 0 }) {
           centring work — it evens the line lengths instead of leaving a long
           line over a short one, which is what makes centred paragraphs look
           accidental. */}
-      <motion.div variants={fadeUp} className="mx-auto mt-6 grid max-w-2xl">
+      <motion.div variants={fadeUp} className="mx-auto mt-6 grid max-w-2xl 3xl:mt-8 3xl:max-w-4xl">
         {LINES.map((line, position) => {
           const active = position === index;
 
@@ -117,7 +117,7 @@ function MenuHeadline({ beat = 0 }) {
               transition={turn}
               className={cn(STACKED, !active && "pointer-events-none")}
             >
-              <p className="text-balance font-serif text-xl font-light italic leading-snug text-cream/85 sm:text-2xl sm:leading-snug">
+              <p className="text-balance font-serif text-xl font-light italic leading-snug text-cream/85 sm:text-2xl sm:leading-snug 3xl:text-3xl">
                 {line.claim}
               </p>
 
@@ -126,7 +126,7 @@ function MenuHeadline({ beat = 0 }) {
                 aria-hidden="true"
               />
 
-              <p className="mx-auto mt-4 max-w-md text-balance text-[0.9375rem] leading-7 text-white/45">
+              <p className="mx-auto mt-4 max-w-md text-balance text-[0.9375rem] leading-7 text-white/45 3xl:max-w-lg 3xl:text-[1.0625rem]">
                 {line.note}
               </p>
             </motion.div>

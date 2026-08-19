@@ -12,7 +12,7 @@ function HeroContent() {
         variants={stagger(0.14, 0.15)}
         initial="hidden"
         animate="visible"
-        className="mx-auto max-w-4xl"
+        className="mx-auto max-w-4xl 3xl:max-w-[74rem] 4xl:max-w-[88rem]"
       >
         <motion.div
           variants={fadeUp}
@@ -27,7 +27,7 @@ function HeroContent() {
 
         <motion.h1
           variants={fadeUp}
-          className="font-serif text-[2.625rem] font-medium leading-[1.05] text-white sm:text-6xl lg:text-[5.75rem]"
+          className="font-serif text-[2.625rem] font-medium leading-[1.05] text-white sm:text-6xl lg:text-[5.75rem] 3xl:text-[7.75rem] 4xl:text-[9rem]"
         >
           Crafted Coffee
           <br />
@@ -36,7 +36,7 @@ function HeroContent() {
 
         <motion.p
           variants={fadeUp}
-          className="mx-auto mt-8 max-w-2xl text-base leading-8 text-white/65 sm:text-lg sm:leading-9"
+          className="mx-auto mt-8 max-w-2xl text-base leading-8 text-white/65 sm:text-lg sm:leading-9 3xl:mt-10 3xl:max-w-[48rem] 3xl:text-xl 3xl:leading-10"
         >
           Single-origin beans roasted in-house every morning, pulled by
           baristas who have spent years learning the difference a few seconds

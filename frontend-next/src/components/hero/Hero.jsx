@@ -31,7 +31,7 @@ function Hero() {
       {/* Bottom rail: scroll cue · stats. Laid out in a row so nothing can
           collide the way absolutely-placed pieces did. The trailing spacer
           balances the scroll cue so the stats stay centred on desktop. */}
-      <div className="relative z-20 mx-auto flex w-full max-w-7xl items-end justify-center gap-6 px-8 pb-8 lg:justify-between">
+      <div className="relative z-20 mx-auto flex w-full max-w-7xl items-end justify-center gap-6 px-8 pb-8 lg:justify-between 3xl:max-w-[110rem] 3xl:px-12 3xl:pb-12 4xl:max-w-[132rem]">
         <ScrollIndicator targetId="story" />
 
         <HeroStats />

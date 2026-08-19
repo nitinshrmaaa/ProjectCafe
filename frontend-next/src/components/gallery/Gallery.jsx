@@ -3,6 +3,7 @@
 import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import { FaArrowRight, FaCube, FaTh } from "react-icons/fa";
 import GalleryGrid from "./GalleryGrid";
+import GalleryFilmstrip from "./GalleryFilmstrip";
 import Lightbox from "./Lightbox";
 import { GALLERY_CATEGORIES, galleryImages } from "./galleryData";
 import Container from "../ui/Container";
@@ -36,8 +37,11 @@ function Gallery({ compact = false, withHeading = true }) {
   const offer3D = canRender3D && isDesktop && !reducedMotion && !compact;
 
   const items = useMemo(() => {
-    // The first four tile into a clean two-row block on the home page.
-    if (compact) return galleryImages.slice(0, 4);
+    // The home page used to take the first four, because four tiled into a
+    // clean two-row block. The strip that replaced the block wants the
+    // opposite — the whole set, so it has somewhere to travel to and the loop
+    // is long enough that a visitor never sees the same frame twice in a row.
+    if (compact) return galleryImages;
 
     return category === "All"
       ? galleryImages
@@ -109,6 +113,7 @@ function Gallery({ compact = false, withHeading = true }) {
           </div>
         )}
 
+        {!compact && (
         <div className="mt-12">
           {offer3D && view === "3d" ? (
             <div className="h-[70vh] min-h-[32.5rem] overflow-hidden rounded-[2rem] border border-white/10">
@@ -130,16 +135,31 @@ function Gallery({ compact = false, withHeading = true }) {
             <GalleryGrid items={items} onOpen={setLightboxIndex} />
           )}
         </div>
+        )}
+      </Container>
 
-        {compact && (
-          <Reveal className="mt-14 text-center">
+      {/* Deliberately outside the container. Everything else on the page lines
+          up to a measure; this one thing runs past it and off both edges,
+          which is what makes it read as a strip rather than as another block
+          of the grid — and is why it needs no width tier of its own. */}
+      {compact && (
+        <GalleryFilmstrip
+          items={items}
+          onOpen={setLightboxIndex}
+          className="mt-12 3xl:mt-16"
+        />
+      )}
+
+      {compact && (
+        <Container>
+          <Reveal className="mt-14 text-center 3xl:mt-16">
             <Button href="/gallery" variant="outline" size="lg">
               Walk through the gallery
               <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </Reveal>
-        )}
-      </Container>
+        </Container>
+      )}
 
       <Lightbox
         items={items}

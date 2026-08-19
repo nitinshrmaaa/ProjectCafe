@@ -14,16 +14,21 @@ const TONES = {
 
 /** Vertical rhythm. Not every section deserves the same breathing room. */
 const SPACES = {
-  tight: "py-16 lg:py-24",
-  normal: "py-20 lg:py-28",
-  tall: "py-24 lg:py-36",
+  tight: "py-16 lg:py-24 3xl:py-32",
+  normal: "py-20 lg:py-28 3xl:py-40",
+  tall: "py-24 lg:py-36 3xl:py-48",
 };
 
-/** Where the warm bloom sits, varied per section so the light moves down the page. */
+/**
+ * Where the warm bloom sits, varied per section so the light moves down the
+ * page. Sized in rem against a viewport that can now be twice as wide, so the
+ * blooms grow with the screen — a 32rem glow on a 2560 display is a spot,
+ * not the wash of light it is on a laptop.
+ */
 const GLOWS = {
-  top: "left-1/2 top-[-16rem] h-[30rem] w-[46rem] -translate-x-1/2 bg-gold-500/[0.07]",
-  left: "left-[-14rem] top-[18%] h-[32rem] w-[32rem] bg-mocha/15",
-  right: "right-[-14rem] bottom-[8%] h-[32rem] w-[32rem] bg-gold-500/[0.09]",
+  top: "left-1/2 top-[-16rem] h-[30rem] w-[46rem] -translate-x-1/2 bg-gold-500/[0.07] 3xl:h-[42rem] 3xl:w-[64rem]",
+  left: "left-[-14rem] top-[18%] h-[32rem] w-[32rem] bg-mocha/15 3xl:h-[46rem] 3xl:w-[46rem]",
+  right: "right-[-14rem] bottom-[8%] h-[32rem] w-[32rem] bg-gold-500/[0.09] 3xl:h-[46rem] 3xl:w-[46rem]",
 };
 
 /**

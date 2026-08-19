@@ -30,7 +30,7 @@ function Contact({ compact = false, withHeading = true }) {
 
         <div
           className={cn(
-            "grid gap-8 lg:grid-cols-2 lg:gap-12",
+            "grid gap-8 lg:grid-cols-2 lg:gap-12 3xl:gap-16",
             withHeading && "mt-16"
           )}
         >

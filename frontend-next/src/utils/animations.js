@@ -55,11 +55,24 @@ export const viewportOnce = { once: true, amount: 0.2 };
  * first pass. For sections that should present themselves on each visit —
  * scroll away and back and they open again, the way they did on load.
  *
- * `amount` is higher than the once-only default: at 0.2 a tall section
- * re-triggers while most of it is still on screen, which reads as a flicker
- * instead of an entrance.
+ * `amount: "some"` — a threshold of zero — is doing something specific and it
+ * is not about the entrance. A repeating `whileInView` does not only animate
+ * in, it animates back *out* the moment the element stops counting as in view,
+ * and the element goes back to `hidden`, which for every variant here means
+ * `opacity: 0`. The threshold therefore decides how much of a block can still
+ * be on screen while its contents are invisible.
+ *
+ * This was 0.35, and on a section taller than the viewport that is a lot of
+ * nothing: the story's copy column runs about 970px, so a third of it — some
+ * 340px — sat on screen completely blank on the way down to the menu, which
+ * read as a hole in the page rather than as an entrance that had finished.
+ *
+ * At zero the element can only reset once it is genuinely, entirely gone, so
+ * anything you can see is drawn. It also puts the re-trigger point past the
+ * edge of the screen instead of a third of the way into it, which is the same
+ * flicker the old value was raised to avoid — just fixed from the other end.
  */
-export const viewportRepeat = { once: false, amount: 0.35 };
+export const viewportRepeat = { once: false, amount: "some" };
 
 export const hoverLift = {
   rest: { y: 0 },

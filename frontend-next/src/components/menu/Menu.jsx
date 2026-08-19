@@ -64,7 +64,7 @@ function Menu() {
     >
       <MenuBackdrop />
 
-      <div className="relative z-10 mx-auto w-full max-w-[96rem] px-5 sm:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[96rem] px-5 sm:px-8 3xl:max-w-[120rem] 3xl:px-12 4xl:max-w-[142rem]">
         <MenuHeadline beat={beat} />
 
         <div className="mt-10 lg:mt-12">

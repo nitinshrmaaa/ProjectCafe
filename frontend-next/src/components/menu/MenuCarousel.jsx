@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import MenuFeatureCard from "./MenuFeatureCard";
 import { featuredItems } from "./menuData";
@@ -70,6 +70,10 @@ function MenuCarousel({ onAdvance }) {
   const { isFavorite, toggle } = useFavorites();
   const reducedMotion = useReducedMotion();
   const track = useRef(null);
+  // The timer below moves the track and turns the headline over with it. Off
+  // screen that is a scroll animation and two React renders every five seconds
+  // that nobody is looking at, so it only runs while the section is in view.
+  const onScreen = useInView(track, { amount: 0 });
   const [page, setPage] = useState(0);
   const [pages, setPages] = useState(1);
   const [paused, setPaused] = useState(false);
@@ -138,12 +142,12 @@ function MenuCarousel({ onAdvance }) {
   );
 
   useEffect(() => {
-    if (paused || reducedMotion || pages < 2) return;
+    if (paused || reducedMotion || pages < 2 || !onScreen) return;
 
     const timer = setInterval(() => goTo(page + 1), INTERVAL);
 
     return () => clearInterval(timer);
-  }, [goTo, page, pages, paused, reducedMotion]);
+  }, [goTo, onScreen, page, pages, paused, reducedMotion]);
 
   const hold = () => setPaused(true);
   const release = () => setPaused(false);

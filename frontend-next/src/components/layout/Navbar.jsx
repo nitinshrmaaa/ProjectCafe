@@ -7,7 +7,8 @@ import { FaArrowRight, FaBars } from "react-icons/fa";
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
 import useOpeningStatus from "../../hooks/useOpeningStatus";
-import useScroll from "../../hooks/useScroll";
+import { useScrolledPast } from "../../hooks/useScroll";
+import ReadingProgress from "./ReadingProgress";
 import { NAV_LINKS } from "../../utils/constants";
 import { cn } from "../../utils/helpers";
 
@@ -18,7 +19,7 @@ import { cn } from "../../utils/helpers";
  */
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { scrolled, progress } = useScroll(30);
+  const scrolled = useScrolledPast(30);
   const pathname = usePathname();
   const status = useOpeningStatus();
 
@@ -151,12 +152,9 @@ function Navbar() {
             </button>
           </div>
 
-          {/* Reading progress */}
-          <div
-            className="h-px origin-left bg-gradient-to-r from-gold-600 via-gold-400 to-gold-200 transition-transform duration-150"
-            style={{ transform: `scaleX(${progress})` }}
-            aria-hidden="true"
-          />
+          {/* Reading progress — its own component so that the one element
+              that changes on scroll is the only one that re-renders. */}
+          <ReadingProgress />
         </nav>
       </header>
 

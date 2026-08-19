@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { FaExpand } from "react-icons/fa";
 import useReducedMotion from "../../hooks/useReducedMotion";
 import { cn } from "../../utils/helpers";
@@ -25,6 +26,12 @@ import { fadeUp, viewportRepeat } from "../../utils/animations";
  * a 2560 monitor gets more photographs rather than wider gutters. Nothing here
  * is capped, which is the point.
  *
+ * It only runs while it is on screen. An infinite CSS animation is infinite
+ * in the literal sense — the compositor stays awake for it whether or not the
+ * section is anywhere near the viewport, so a strip left running at the foot
+ * of the page taxes every other thing the page does, including scrolling past
+ * the hero. Held still off screen it costs nothing.
+ *
  * The loop is two passes of the same set translated by exactly half, so the
  * seam lands where the second pass starts and there is no jump to hide. The
  * duplicate pass is inert to assistive tech and to the keyboard — it is the
@@ -44,6 +51,9 @@ const EDGE_FADE =
 
 function GalleryFilmstrip({ items, onOpen, className }) {
   const reducedMotion = useReducedMotion();
+  const strip = useRef(null);
+  // `amount: 0` — any part of it showing is enough to be worth animating.
+  const onScreen = useInView(strip, { amount: 0 });
 
   // Under reduced motion the strip stops travelling and becomes an ordinary
   // scroller the visitor pushes themselves — one pass, since a duplicate set
@@ -56,6 +66,7 @@ function GalleryFilmstrip({ items, onOpen, className }) {
       initial="hidden"
       whileInView="visible"
       viewport={viewportRepeat}
+      ref={strip}
       className={cn("relative", className)}
     >
       <div className={EDGE_FADE}>
@@ -64,7 +75,10 @@ function GalleryFilmstrip({ items, onOpen, className }) {
             "flex w-max gap-5 lg:gap-7 3xl:gap-8",
             reducedMotion
               ? "w-full snap-x snap-mandatory overflow-x-auto px-5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              : "animate-marquee hover:[animation-play-state:paused]"
+              : cn(
+                  "animate-marquee hover:[animation-play-state:paused]",
+                  !onScreen && "[animation-play-state:paused]"
+                )
           )}
         >
           {passes.map((pass) =>

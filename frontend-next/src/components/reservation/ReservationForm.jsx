@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaCheck, FaRegCalendarCheck } from "react-icons/fa";
 import Field from "../ui/Field";
 import Button from "../ui/Button";
@@ -33,6 +33,36 @@ const EMPTY = {
 /** Table booking form with client-side validation and a confirmation state. */
 function ReservationForm() {
   const [values, setValues] = useState(EMPTY);
+
+  /**
+   * The home page's booking prompt sends people here with a party size
+   * already chosen, so the first thing this form does is honour it — arriving
+   * at a form that has forgotten the answer you just gave it is the fastest
+   * way to make someone abandon a booking.
+   *
+   * Applied in an effect rather than seeded into `useState`, and read from
+   * `window.location` rather than `useSearchParams`: this route is
+   * prerendered, so anything read during the first render either disagrees
+   * with the server's HTML or drags the whole page out of static rendering.
+   * Only values the selects actually offer are accepted, so a hand-edited URL
+   * cannot put the form into a state it has no option for.
+   */
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const guests = query.get("guests");
+    const time = query.get("time");
+    const patch = {};
+
+    if (guests && PARTY_SIZES.some((size) => String(size) === guests)) {
+      patch.guests = guests;
+    }
+
+    if (time && TIME_SLOTS.includes(time)) patch.time = time;
+
+    if (Object.keys(patch).length) {
+      setValues((current) => ({ ...current, ...patch }));
+    }
+  }, []);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
   const [confirmed, setConfirmed] = useState(null);
